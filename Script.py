@@ -1,5 +1,5 @@
 class script(object):
-    START_TXT = """<b>Hi, I'm Movies Search BOT, Powered BY [Prime Bots](https://t.me/Prime_BotZ)
+    START_TXT = """<b>Hi, I'm Movies Search BOT, Powered BY @TamilPrime_LinkZz
 
 Here you can search files in Inline mode as well as PM, Use the below buttons to search files or send me the name of file to search.</b>"""
     HELP_TXT = """𝙷𝙴𝚈 {}

@@ -243,7 +243,7 @@ async def start(client, message):
     buttons = [
                     [
                         InlineKeyboardButton('Search again', switch_inline_query_current_chat=''),
-                        InlineKeyboardButton('Discussion', url='https://t.me/MSPdiscussion')
+                        InlineKeyboardButton('Discussion', url='https://t.me/Primediscussions')
                     ]
                     ]
     await client.send_cached_media(

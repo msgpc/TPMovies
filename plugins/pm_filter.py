@@ -349,6 +349,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
+        buttons = [
+                    [
+                        InlineKeyboardButton('Discussion', url='https://t.me/Primediscussions'),
+                        InlineKeyboardButton('Update Channel', url='https://t.me/PrimeMovieszHD')
+                    ]
+                    ]
+                
+                await query.answer()
+                await client.send_cached_media(
+                    chat_id=query.from_user.id,
+                    file_id=file_id,
+                    caption=f_caption,
+                    reply_markup=InlineKeyboardMarkup(buttons)
+                    )
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
@@ -393,6 +407,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = f_caption
         if f_caption is None:
             f_caption = f"{title}"
+        buttons = [
+                    [
+                         InlineKeyboardButton('Discussion', url='https://t.me/MSPdiscussion'),
+                        InlineKeyboardButton('Update Channel', url='https://t.me/MSPmoviesOffl')
+                    ]
+                    ]
+                
+                await query.answer()
+                await client.send_cached_media(
+                    chat_id=query.from_user.id,
+                    file_id=file_id,
+                    caption=f_caption,
+                    reply_markup=InlineKeyboardMarkup(buttons)
+                    )
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
@@ -427,8 +455,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Connection', callback_data='coct'),
             InlineKeyboardButton('Extra Mods', callback_data='extra')
         ], [
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('🔮 Status', callback_data='stats')
+            InlineKeyboardButton('Home', callback_data='start'),
+            InlineKeyboardButton('Status', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(

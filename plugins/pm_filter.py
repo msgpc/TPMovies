@@ -341,30 +341,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         settings = await get_settings(query.message.chat.id)
         if CUSTOM_FILE_CAPTION:
             try:
-                f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
-                                                       file_size='' if size is None else size,
-                                                       file_caption='' if f_caption is None else f_caption)
+                f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
             except Exception as e:
                 logger.exception(e)
-            f_caption = f_caption
+            f_caption=f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
-        buttons = [
-                    [
-                        InlineKeyboardButton('Discussion', url='https://t.me/Primediscussions'),
-                        InlineKeyboardButton('Update Channel', url='https://t.me/PrimeMovieszHD')
-                    ]
-                    ]
-                
-        await query.answer()
-        await client.send_cached_media(
-            chat_id=query.from_user.id,
-            file_id=file_id,
-            caption=f_caption,
-            protect_content=True if ident == 'checksubp' else False),
-            reply_markup=InlineKeyboardMarkup(buttons)
-            )
-
+            
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
@@ -400,35 +383,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
         f_caption = files.caption
         if CUSTOM_FILE_CAPTION:
             try:
-                f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
-                                                       file_size='' if size is None else size,
-                                                       file_caption='' if f_caption is None else f_caption)
+                f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
             except Exception as e:
                 logger.exception(e)
-                f_caption = f_caption
+                f_caption=f_caption
         if f_caption is None:
             f_caption = f"{title}"
-        buttons = [
-                    [
-                         InlineKeyboardButton('Discussion', url='https://t.me/MSPdiscussion'),
-                        InlineKeyboardButton('Update Channel', url='https://t.me/MSPmoviesOffl')
-                    ]
-                    ]
-                
-                await query.answer()
-                await client.send_cached_media(
-                    chat_id=query.from_user.id,
-                    file_id=file_id,
-                    caption=f_caption,
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                    )
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
             file_id=file_id,
-            caption=f_caption,
-            protect_content=True if ident == 'checksubp' else False
-        )
+            caption=f_caption
+            )
+
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":

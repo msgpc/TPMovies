@@ -356,13 +356,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ]
                     ]
                 
-                await query.answer()
-                await client.send_cached_media(
-                    chat_id=query.from_user.id,
-                    file_id=file_id,
-                    caption=f_caption,
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                    )
+        await query.answer()
+        await client.send_cached_media(
+            chat_id=query.from_user.id,
+            file_id=file_id,
+            caption=f_caption,
+            protect_content=True if ident == 'checksubp' else False),
+            reply_markup=InlineKeyboardMarkup(buttons)
+            )
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):

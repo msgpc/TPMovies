@@ -441,7 +441,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Discussion', url='https://t.me/Primediscussions'),
             InlineKeyboardButton('Updates Channel', url='https://t.me/PrimeMovieszHD')
         ], [
-            InlineKeyboardButton('Stats', callback_data='stats'),
+            InlineKeyboardButton('Stats', callback_data='help'),
             InlineKeyboardButton('', callback_data='')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)

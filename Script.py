@@ -2,7 +2,8 @@ class script(object):
     START_TXT = """<b>Hi, I'm Movies Search BOT, Powered BY @TamilPrime_LinkZz
 
 Here you can search files in Inline mode as well as PM, Use the below buttons to search files or send me the name of file to search.</b>"""
-    HELP_TXT = """"""
+    HELP_TXT = """<b>Hey {}
+Here Is The Help For My Commands.</b>"""
     ABOUT_TXT = """<b>Developer : <a href='https://t.me/I_M_Madhan'>Madhan</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://t.me/TamilPrime_LinkZz'>Click here</a>\nHelp Group : <a href='https://t.me/Primediscussions'>Prime Bots</a> </b>"""
     SOURCE_TXT = """<b>NOTE:</b>
 - Eva Maria is a open source project. 
